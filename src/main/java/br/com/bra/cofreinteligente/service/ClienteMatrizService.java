@@ -7,6 +7,8 @@ import br.com.bra.cofreinteligente.entity.ClienteMatriz;
 import br.com.bra.cofreinteligente.entity.Endereco;
 import br.com.bra.cofreinteligente.repository.ClienteMatrizRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -45,10 +47,8 @@ public class ClienteMatrizService {
         return new ClienteMatrizDto(cliente.get());
     }
 
-    public List<ClienteMatrizDto> getAllClienteMatriz(){
-        return clienteMatrizRepository.findAll().stream()
-                .map(ClienteMatrizDto::new)
-                .toList();
+    public Page<ClienteMatrizDto> getAllClienteMatriz(Pageable pageable){
+        return clienteMatrizRepository.findAll(pageable).map(ClienteMatrizDto::new);
     }
 
 

@@ -6,6 +6,8 @@ import br.com.bra.cofreinteligente.entity.Movimentacoes;
 import br.com.bra.cofreinteligente.repository.CofreRepository;
 import br.com.bra.cofreinteligente.repository.MovimentacoesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.text.ParseException;

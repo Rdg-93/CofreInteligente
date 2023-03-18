@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -27,7 +28,7 @@ public class Movimentacoes {
     @JoinColumn(name = "numeroCofre")
     private Cofre cofre;
 
-    @JsonFormat(pattern = "dd-MM-yyyy")
+    @DateTimeFormat(pattern = "dd/MMM/yyyy")
     private LocalDate data;
 
     private BigDecimal valorRecolhido;
