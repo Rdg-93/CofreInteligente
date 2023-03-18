@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,18 +22,18 @@ public class ClienteMatrizController {
     public ClienteMatrizService clienteMatrizService;
 
     @PostMapping
-    public ClienteMatrizDto addClienteMatriz(@RequestBody ClienteMatrizDto clienteMatrizDto){
-        return clienteMatrizService.addClienteMatriz(clienteMatrizDto);
+    public ResponseEntity<ClienteMatrizDto> addClienteMatriz(@RequestBody ClienteMatrizDto clienteMatrizDto){
+        return ResponseEntity.status(HttpStatus.CREATED).body(clienteMatrizService.addClienteMatriz(clienteMatrizDto));
     }
 
     @GetMapping
-    public Page<ClienteMatrizDto> getClienteMatriz(@PageableDefault(size = 10, sort = {"id"}) Pageable pageable){
-        return clienteMatrizService.getAllClienteMatriz(pageable);
+    public ResponseEntity<Page<ClienteMatrizDto>> getClienteMatriz(@PageableDefault(size = 10, sort = {"id"}) Pageable pageable){
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(clienteMatrizService.getAllClienteMatriz(pageable));
     }
 
     @GetMapping("/{id}")
-    public ClienteMatrizDto getClienteMatrizById(@PathVariable(value = "id") Long id) throws Exception {
-        return clienteMatrizService.getClienteMatriz(id);
+    public ResponseEntity<ClienteMatrizDto> getClienteMatrizById(@PathVariable(value = "id") Long id) throws Exception {
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(clienteMatrizService.getClienteMatriz(id));
     }
 
 //    @DeleteMapping("/{id}")

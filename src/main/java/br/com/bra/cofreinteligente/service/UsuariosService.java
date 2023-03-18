@@ -4,6 +4,7 @@ import br.com.bra.cofreinteligente.dto.UsuariosDto;
 import br.com.bra.cofreinteligente.entity.Usuarios;
 import br.com.bra.cofreinteligente.repository.UsuariosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,9 +21,11 @@ public class UsuariosService {
         if (usuarios.isPresent()){
             throw new Exception("Usuário já cadastrado");
         }
+        BCryptPasswordEncoder chave = new BCryptPasswordEncoder();
         var usuario = Usuarios.builder()
                 .funcional(dto.getFuncional())
                 .nome(dto.getNome())
+                .senha(chave.encode(dto.getSenha()))
                 .acesso(dto.getAcesso())
                 .build();
         usuariosRepository.save(usuario);
