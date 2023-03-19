@@ -30,15 +30,9 @@ public class SegurityConfig {
         return http.csrf().disable().build();
                 //.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                /* .and().authorizeRequests()
-                .antMatchers(HttpMethod.GET,"/").permitAll()
-                .antMatchers(HttpMethod.GET,"/ClienteMatriz/{id}").permitAll()
-                .antMatchers(HttpMethod.POST,"/").permitAll()
-                .antMatchers(HttpMethod.PATCH,"/").permitAll()
-                .antMatchers(HttpMethod.DELETE,"/").permitAll()
-                .antMatchers(HttpMethod.PUT,"/").permitAll()
+                .antMatchers("/v3/api-docs/**, "/swagger-ui.html", "/swagger-ui/**", "/swagger/**"").permitAll()
                 .antMatchers(HttpMethod.POST, "/login").permitAll()
                 .antMatchers(HttpMethod.GET, "/swagger-ui").permitAll()
-                .antMatchers(HttpMethod.GET,"/").permitAll()
                 .anyRequest().authenticated()
                 .and().addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
 
