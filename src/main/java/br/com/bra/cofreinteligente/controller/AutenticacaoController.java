@@ -1,3 +1,4 @@
+/*
 package br.com.bra.cofreinteligente.controller;
 
 import br.com.bra.cofreinteligente.configuration.Token;
@@ -35,3 +36,4 @@ public class AutenticacaoController {
         return ResponseEntity.ok(new DadosTokenJWT(tokenJWT));
     }
 }
+*/

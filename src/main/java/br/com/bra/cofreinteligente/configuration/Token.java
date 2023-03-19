@@ -1,3 +1,4 @@
+/*
 package br.com.bra.cofreinteligente.configuration;
 
 import br.com.bra.cofreinteligente.dto.UsuariosDto;
@@ -50,4 +51,4 @@ public class Token {
         return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("-03:00"));
     }
 }
-
+*/

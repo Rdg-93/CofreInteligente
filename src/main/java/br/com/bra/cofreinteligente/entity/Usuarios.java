@@ -20,8 +20,9 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @NoArgsConstructor
-public class Usuarios implements UserDetails {
+public class Usuarios { /* implements UserDetails {
 
+*/
     @Id
     @NotBlank
     private Long funcional;
@@ -34,6 +35,7 @@ public class Usuarios implements UserDetails {
 
     private String acesso;
 
+    /*
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"));
@@ -68,4 +70,6 @@ public class Usuarios implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
+     */
 }

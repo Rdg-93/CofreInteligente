@@ -1,4 +1,4 @@
-package br.com.bra.cofreinteligente.configuration;
+/* package br.com.bra.cofreinteligente.configuration;
 
 import br.com.bra.cofreinteligente.repository.UsuariosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@Component
+//@Component
 public class SecurityFilter extends OncePerRequestFilter {
 
     @Autowired
@@ -48,3 +48,5 @@ public class SecurityFilter extends OncePerRequestFilter {
         return authorizationHeader.replace("Bearer ", "");
     }
 }
+
+*/

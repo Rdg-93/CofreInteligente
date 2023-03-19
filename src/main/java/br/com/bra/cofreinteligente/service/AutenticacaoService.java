@@ -1,3 +1,4 @@
+/*
 package br.com.bra.cofreinteligente.service;
 
 import br.com.bra.cofreinteligente.entity.Usuarios;
@@ -19,3 +20,5 @@ public class AutenticacaoService implements UserDetailsService {
         return usuariosRepository.findByFuncional(Long.parseLong(username));
     }
 }
+*/
+
