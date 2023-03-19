@@ -23,6 +23,12 @@ public class ContratosService {
     @Autowired
     public ClienteFilialService clienteFilialService;
 
+    /*@Autowired
+    * public List<InterfaceValidacao> validadores;
+     */
+
+    // validadores.forEach(v -> v.validar(dados));
+
     public ContratosDto addContratos(ContratosDto dto) throws Exception {
 
         var cliente = clienteFilialService.findClienteFilial(dto.getIdCliente());
