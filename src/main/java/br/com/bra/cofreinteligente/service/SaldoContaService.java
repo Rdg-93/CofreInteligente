@@ -9,6 +9,7 @@ import br.com.bra.cofreinteligente.entity.SaldoConta;
 import br.com.bra.cofreinteligente.repository.ClienteFilialRepository;
 import br.com.bra.cofreinteligente.repository.ContaRepository;
 import br.com.bra.cofreinteligente.repository.SaldoContaRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +29,9 @@ public class SaldoContaService {
 
     @Autowired
     public ClienteFilialRepository clienteFilialRepository;
+
+    @Autowired
+    public ModelMapper modelMapper;
 
 
     public void addAbreSaldoConta(Long id){

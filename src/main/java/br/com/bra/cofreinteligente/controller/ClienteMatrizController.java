@@ -26,9 +26,10 @@ public class ClienteMatrizController {
         return ResponseEntity.status(HttpStatus.CREATED).body(clienteMatrizService.addClienteMatriz(clienteMatrizDto));
     }
 
-    @GetMapping
-    public ResponseEntity<Page<ClienteMatrizDto>> getClienteMatriz(@PageableDefault(size = 10, sort = {"id"}) Pageable pageable){
-        return ResponseEntity.status(HttpStatus.ACCEPTED).body(clienteMatrizService.getAllClienteMatriz(pageable));
+    @GetMapping("/page={page}")
+    public ResponseEntity<Page<ClienteMatrizDto>> getClienteMatriz(@PageableDefault(size = 10, sort = {"id"}) Pageable pageable,
+                                                                   @PathVariable(value = "page") int page){
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(clienteMatrizService.getAllClienteMatriz(pageable.withPage(page)));
     }
 
     @GetMapping("/{id}")

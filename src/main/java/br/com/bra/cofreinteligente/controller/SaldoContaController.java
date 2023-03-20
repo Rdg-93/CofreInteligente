@@ -3,6 +3,7 @@ package br.com.bra.cofreinteligente.controller;
 import br.com.bra.cofreinteligente.service.CSVService;
 import br.com.bra.cofreinteligente.dto.SaldoContaDto;
 import br.com.bra.cofreinteligente.service.SaldoContaService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,6 +22,7 @@ public class SaldoContaController {
 
     @Autowired
     public CSVService csvService;
+
 
     @GetMapping
     public List<SaldoContaDto> getAllSaldoConta (){
